@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello WebSocket</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="/main.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7.0.0/bundles/stomp.umd.min.js"></script>
+    <script src="/app.js"></script>
+</head>
+<style>
+    /* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Chat Container */
+.chat-container {
+    width: 400px;
+    height: 500px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Chat Header */
+.chat-header {
+    background: #007bff;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Chat Box */
+.chat-box {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Messages */
+.message {
+    max-width: 70%;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 15px;
+    font-size: 14px;
+    word-wrap: break-word;
+}
+
+/* My Messages */
+.my-message {
+    background: #007bff;
+    color: white;
+    align-self: flex-end;
+    text-align: right;
+    border-bottom-right-radius: 0;
+}
+
+/* Other Messages */
+.other-message {
+    background: #e4e6eb;
+    color: #333;
+    align-self: flex-start;
+    text-align: left;
+    border-bottom-left-radius: 0;
+}
+
+/* Chat Input */
+.chat-input {
+    display: flex;
+    padding: 10px;
+    background: #fff;
+    border-top: 1px solid #ddd;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.chat-input button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.chat-input button:hover {
+    background: #0056b3;
+}
+
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="chat-container">
+
+    <div class="chat-header">WebSocket Chat</div>
+
+    <div id="conversation" class="chat-box"></div>
+    <div class="chat-input">
+        <button id="connect" class="btn btn-default" type="submit">Connect</button>
+        <button id="disconnect" class="btn btn-default" type="submit" disabled="disabled">Disconnect
+        </button>
+        <input type="text" id="name" placeholder="Type a message..." />
+        <button onclick="sendName()">Send</button>
+    </div>
+</div>
+<script src="app.js"></script>
+</body>
+
+</html>
+
+</html>
